@@ -1,0 +1,27 @@
+{% extends 'home.html.twig' %}
+
+{% block body %}
+    <h1>Customers list</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Bithday</th>
+                <th>isYoung</th>
+            </tr>
+        </thead>
+        <tbody>
+         {% for c in cus %}
+            <tr>
+                
+                <td>{{ c.name }}</td>
+                <td>{{ c.birthday|date("m/d/Y") }}</td>
+                <td>{{ c.isYoungDriver }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

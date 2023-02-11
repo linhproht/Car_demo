@@ -1,0 +1,32 @@
+{% extends 'home.html.twig' %}
+
+{% block body %}
+    <h1>Cars list</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Travelleddistance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+         {% for car in cars %}
+            <tr>
+                <td>{{ car.id }}</td>
+                <td>{{ car.make }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.travelledDistance }}</td>
+                <td>
+                    <a href="{{ path('car_show', { 'id': car.id }) }}">show</a>
+                    
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

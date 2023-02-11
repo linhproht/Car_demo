@@ -1,0 +1,23 @@
+{% extends 'home.html.twig' %}
+
+{% block body %}
+    <h1>Suppliers list</h1>
+    {{ sup|length}}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+         {% for s in sup %}
+            <tr>
+                 <td>{{ s.id }}</td>
+                <td>{{ s.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
